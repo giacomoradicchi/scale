@@ -15,24 +15,38 @@ Scale.jar è un'utility a riga di comando che permette di ridimensionare immagin
 ## Sintassi
 ```bash
 java -jar scale.jar <file_input> <fattore_scala> <file_output>
+```
 
+## Parametri
+- `<file_input>`: percorso del file immagine da ridimensionare
+- `<fattore_scala>`: numero decimale che rappresenta il fattore di scala (es. 0.5 per dimezzare, 2.0 per raddoppiare)
+- `<file_output>`: nome del file di output per l'immagine ridimensionata
 
-## Getting Started
+## Esempi d'uso
+Ridurre un'immagine al 50% delle dimensioni originali:
+```bash
+java -jar scale.jar foto.png 0.5 foto_piccola.png
+```
+Ingrandire un'immagine al doppio delle dimensioni:
+```bash
+java -jar scale.jar immagine.png 2.0 immagine_grande.png
+```
+Ridimensionare del 75%:
+```bash
+java -jar scale.jar documento.png 0.75 documento_ridotto.png
+```
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Formati supportati
+L'applicazione supporta i seguenti formati immagine:
 
-## Folder Structure
+- PNG (.png)
+- GIF (.gif)
 
-The workspace contains two folders by default, where:
+## Note
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Il fattore di scala deve essere un numero positivo
+- Valori inferiori a 1.0 riducono l'immagine
+- Valori superiori a 1.0 ingrandiscono l'immagine
+- Assicurati di avere i permessi di lettura per il file di input e di scrittura per la cartella di output
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
 
