@@ -7,12 +7,8 @@ import javax.imageio.ImageIO;
 public class Cotor {
     private BufferedImage img;
 
-    public Cotor(String name) {
-        try {
-            this.img = ImageIO.read(new File("./img/" + name));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public Cotor(String name) throws Exception{
+        this.img = ImageIO.read(new File("./img/" + name));
     }
 
     public Cotor scale(double scale_factor) {
@@ -110,9 +106,27 @@ public class Cotor {
 
     public void save(String outputName) {
         try {
-            ImageIO.write(img, "png", new File("./img/" + outputName));
+            ImageIO.write(img, getFormatFromExtension(outputName), new File("./img/" + outputName));
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private static String getFormatFromExtension(String outputName) {
+        int dotIndex = outputName.lastIndexOf('.');
+        if (dotIndex == -1 || dotIndex == outputName.length() - 1) {
+            // di default restituisce png
+            return "png";
+        }
+        // estraggo il cotor string finale e lo metto in minuscolo
+        String ext = outputName.substring(dotIndex + 1).toLowerCase();
+        switch (ext) {
+            case "png":
+                return "png";
+            case "gif":
+                return "gif";
+            default:
+                return "png"; 
         }
     }
 }
