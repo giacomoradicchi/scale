@@ -1,4 +1,4 @@
-# Scale.jar - Image Resizer
+# Cotoresize
 
 Un'applicazione Java per ridimensionare immagini secondo un fattore di scala personalizzato.
 
@@ -48,5 +48,6 @@ L'applicazione supporta i seguenti formati immagine:
 - Valori inferiori a 1.0 riducono l'immagine
 - Valori superiori a 1.0 ingrandiscono l'immagine
 - Assicurati di avere i permessi di lettura per il file di input e di scrittura per la cartella di output
+
 
 
