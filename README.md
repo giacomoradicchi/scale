@@ -2,6 +2,7 @@
 
 Un'applicazione Java per ridimensionare immagini secondo un fattore di scala personalizzato.
 
+```mermaid
 classDiagram
     direction TB
 
@@ -55,6 +56,7 @@ classDiagram
     Node "0..*" -- "0..1" Node : parent
     Problem "1" -- "1" Search : queries
     Search "1" -- "0..1" Node : returns
+```
 
 ## Descrizione
 
