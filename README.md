@@ -2,6 +2,23 @@
 
 Un'applicazione Java per ridimensionare immagini secondo un fattore di scala personalizzato.
 
+```mermaid
+classDiagram
+    class Node {
+        -state: State
+        -parent: Node
+        -action: Action
+        -path_cost: Real
+        -depth: Integer
+    }
+
+    class State {
+        <<interface>>
+    }
+
+    Node "0..*" o-- "1" State: associated with
+```
+
 ## Descrizione
 
 Scale.jar è un'utility a riga di comando che permette di ridimensionare immagini applicando un fattore di scala arbitrario. L'immagine ridimensionata viene salvata con un nuovo nome specificato dall'utente.
